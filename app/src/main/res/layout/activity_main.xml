@@ -4,85 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/txtPlayerDPT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:text="Hero Damage"
-        app:layout_constraintStart_toStartOf="@+id/txtPlayer_name"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlayer_name" />
-
-    <TextView
-        android:id="@+id/txtPlayer_hp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:text="Character HP"
-        app:layout_constraintStart_toStartOf="@+id/txtPlayer_name"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlayerDPT" />
-
-    <TextView
-        android:id="@+id/txtPlayer_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="148dp"
-        android:text="My Character"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtEnemyDPT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:text="Monster Damage"
-        app:layout_constraintEnd_toEndOf="@+id/txtEnemy_name"
-        app:layout_constraintTop_toTopOf="@+id/txtPlayerDPT" />
-
-    <TextView
-        android:id="@+id/txtEnemy_hp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:text="Monster HP"
-        app:layout_constraintEnd_toEndOf="@+id/txtEnemy_name"
-        app:layout_constraintTop_toTopOf="@+id/txtPlayer_hp" />
-
-    <TextView
-        android:id="@+id/txtEnemy_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="52dp"
-        android:text="Monster Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtPlayer_name" />
-
-    <Button
-        android:id="@+id/btnNextTurn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="Start Turn"
-        app:layout_constraintEnd_toStartOf="@+id/txtEnemy_name"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toEndOf="@+id/txtPlayer_name"
-        app:layout_constraintTop_toTopOf="@+id/txtPlayer_name" />
 
     <TextView
         android:id="@+id/txtTurnLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="220dp"
         android:text="Start Game Press Start Turn"
-        app:layout_constraintEnd_toStartOf="@+id/txtEnemy_name"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/txtPlayer_name"
+        android:textColor="#FF5722"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="240dp"
+        android:layout_height="388dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtEnemy_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="96dp"
+            android:text="Monster Name"
+            android:textColor="#FFEB3B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtEnemyDPT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Monster Damage"
+            android:textColor="#FFEB3B"
+            app:layout_constraintStart_toStartOf="@+id/txtEnemy_hp"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnemy_hp" />
+
+        <TextView
+            android:id="@+id/txtEnemy_hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Monster HP"
+            android:textColor="#FFEB3B"
+            app:layout_constraintStart_toStartOf="@+id/txtEnemy_name"
+            app:layout_constraintTop_toBottomOf="@+id/txtEnemy_name" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="219dp"
+            android:layout_height="153dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="72dp"
+            android:src="@drawable/demon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="240dp"
+        android:layout_height="405dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/manaPoints"
+            android:layout_width="54dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="32dp"
+            android:text="Mana"
+            android:textColor="#FFEB3B"
+            app:layout_constraintBottom_toTopOf="@+id/gifImageView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPlayer_hp"
+            android:layout_width="95dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:text="Character hp"
+            android:textColor="#FFEB3B"
+            app:layout_constraintStart_toStartOf="@+id/txtPlayer_name"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlayer_name" />
+
+        <TextView
+            android:id="@+id/txtPlayerDPT"
+            android:layout_width="103dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="15dp"
+            android:text="Hero Damage"
+            android:textColor="#FFEB3B"
+            app:layout_constraintStart_toStartOf="@+id/txtPlayer_hp"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlayer_hp" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/gifImageView"
+            android:layout_width="71dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginBottom="104dp"
+            android:src="@drawable/idle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPlayer_name"
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="72dp"
+            android:text="My Character"
+            android:textColor="#FFEB3B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/Ability1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="TODO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Ability2"
+            app:srcCompat="@drawable/burn"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/Ability2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="184dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="TODO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/powerup"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnNextTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="248dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#EC0808"
+        android:fontFamily="monospace"
+        android:text="Start Turn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
